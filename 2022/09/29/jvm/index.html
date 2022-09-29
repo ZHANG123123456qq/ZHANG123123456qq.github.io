@@ -4,14 +4,14 @@
   <meta charset="utf-8">
   
   
-  <title>Hexo</title>
+  <title>jvm | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="123title: jvmdate: 2022-09-29 19:02:36tags: hello jvm  JVM与Java体系结构前言作为Java工程师的你曾被伤害过吗？你是否也遇到过这些问题？ 运行着的线上系统突然卡死，系统无法访问，甚至直接OOMM！  想解决线上JVM GC问题，但却无从下手。 新项目上线，对各种JVM参数设置一脸茫然，直接默认吧然后就JJ了 每次面试之前都要重新背一遍J">
+  <meta name="description" content="JVM与Java体系结构前言作为Java工程师的你曾被伤害过吗？你是否也遇到过这些问题？ 运行着的线上系统突然卡死，系统无法访问，甚至直接OOMM！  想解决线上JVM GC问题，但却无从下手。 新项目上线，对各种JVM参数设置一脸茫然，直接默认吧然后就JJ了 每次面试之前都要重新背一遍JVM的一些原理概念性的东西，然而面试官却经常问你在实际项目中如何调优VM参数，如何解决GC、OOM等问题，一脸">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="jvm">
 <meta property="og:url" content="http://example.com/2022/09/29/jvm/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="123title: jvmdate: 2022-09-29 19:02:36tags: hello jvm  JVM与Java体系结构前言作为Java工程师的你曾被伤害过吗？你是否也遇到过这些问题？ 运行着的线上系统突然卡死，系统无法访问，甚至直接OOMM！  想解决线上JVM GC问题，但却无从下手。 新项目上线，对各种JVM参数设置一脸茫然，直接默认吧然后就JJ了 每次面试之前都要重新背一遍J">
+<meta property="og:description" content="JVM与Java体系结构前言作为Java工程师的你曾被伤害过吗？你是否也遇到过这些问题？ 运行着的线上系统突然卡死，系统无法访问，甚至直接OOMM！  想解决线上JVM GC问题，但却无从下手。 新项目上线，对各种JVM参数设置一脸茫然，直接默认吧然后就JJ了 每次面试之前都要重新背一遍JVM的一些原理概念性的东西，然而面试官却经常问你在实际项目中如何调优VM参数，如何解决GC、OOM等问题，一脸">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/image-20200704111417472.png">
 <meta property="og:image" content="http://example.com/images/image-20200704112119729.png">
@@ -24,9 +24,10 @@
 <meta property="og:image" content="http://example.com/images/image-20200704183236169.png">
 <meta property="og:image" content="http://example.com/images/image-20200704183436495.png">
 <meta property="og:image" content="http://example.com/images/image-20200704210429535.png">
-<meta property="article:published_time" content="2022-09-29T10:38:32.320Z">
-<meta property="article:modified_time" content="2022-09-29T11:11:52.670Z">
+<meta property="article:published_time" content="2022-09-29T11:02:36.000Z">
+<meta property="article:modified_time" content="2022-09-29T11:16:48.363Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="hello jvm">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/image-20200704111417472.png">
   
@@ -88,18 +89,26 @@
         <section id="main"><article id="post-jvm" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2022/09/29/jvm/" class="article-date">
-  <time class="dt-published" datetime="2022-09-29T10:38:32.320Z" itemprop="datePublished">2022-09-29</time>
+  <time class="dt-published" datetime="2022-09-29T11:02:36.000Z" itemprop="datePublished">2022-09-29</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      jvm
+    </h1>
+  
+
+      </header>
+    
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">title: jvm</span><br><span class="line">date: 2022-09-29 19:02:36</span><br><span class="line">tags: hello jvm</span><br></pre></td></tr></table></figure>
-
-<h1 id="JVM与Java体系结构"><a href="#JVM与Java体系结构" class="headerlink" title="JVM与Java体系结构"></a>JVM与Java体系结构</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>作为Java工程师的你曾被伤害过吗？你是否也遇到过这些问题？</p>
+        <h1 id="JVM与Java体系结构"><a href="#JVM与Java体系结构" class="headerlink" title="JVM与Java体系结构"></a>JVM与Java体系结构</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>作为Java工程师的你曾被伤害过吗？你是否也遇到过这些问题？</p>
 <p>运行着的线上系统突然卡死，系统无法访问，甚至直接OOMM！</p>
 <ul>
 <li>想解决线上JVM GC问题，但却无从下手。</li>
@@ -411,10 +420,12 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2022/09/29/jvm/" data-id="cl8mxnap70000nouyc3a481nw" data-title="" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2022/09/29/jvm/" data-id="cl8mxnap70000nouyc3a481nw" data-title="jvm" class="article-share-link">Share</a>
       
       
       
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hello-jvm/" rel="tag">hello jvm</a></li></ul>
+
     </footer>
   </div>
   
@@ -444,7 +455,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hello-test1/" rel="tag">Hello test1</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hello-test1/" rel="tag">Hello test1</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hello-jvm/" rel="tag">hello jvm</a></li></ul>
     </div>
   </div>
 
@@ -454,7 +465,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Hello-test1/" style="font-size: 10px;">Hello test1</a>
+      <a href="/tags/Hello-test1/" style="font-size: 10px;">Hello test1</a> <a href="/tags/hello-jvm/" style="font-size: 10px;">hello jvm</a>
     </div>
   </div>
 
@@ -476,7 +487,7 @@
       <ul>
         
           <li>
-            <a href="/2022/09/29/jvm/">(no title)</a>
+            <a href="/2022/09/29/jvm/">jvm</a>
           </li>
         
           <li>
